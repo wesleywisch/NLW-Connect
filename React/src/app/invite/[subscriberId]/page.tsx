@@ -4,10 +4,18 @@ import { Ranking } from "./ranking";
 import { Stats } from "./stats";
 import { InviteLinkInput } from "./invite-link-input";
 
-import logo from '../../assets/logo.svg'
+import logo from '../../../assets/logo.svg'
 
-export default function Invite(){
-  const inviteLink = 'http://localhost:3000/invite/123'
+type InvitePageProps = {
+  params: Promise<{
+    subscriberId: string;
+  }>
+}
+
+export default async function InvitePage({ params }: InvitePageProps){
+  const { subscriberId } = await params;
+
+  const inviteLink = `http://localhost:3333/invites/${subscriberId}`
 
   return (
     <div className="min-h-dvh flex items-center justify-between gap-16 flex-col md:flex-row">
@@ -40,7 +48,9 @@ export default function Invite(){
           inviteLink={inviteLink}
         />
 
-        <Stats />
+        <Stats 
+          subscriberId={subscriberId}
+        />
        </div>
       </div>
 

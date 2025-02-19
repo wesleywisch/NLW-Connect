@@ -1,8 +1,8 @@
 "use client" // Comando que fala para o Next enviar o javascript ao navegador
 import { Copy, Link } from "lucide-react";
 
-import { InputField, InputIcon, InputRoot } from "../../components/Input";
-import { IconButton } from "../../components/IconButton";
+import { InputField, InputIcon, InputRoot } from "../../../components/Input";
+import { IconButton } from "../../../components/IconButton";
 
 type InviteLinkInputProps = {
   inviteLink: string;
